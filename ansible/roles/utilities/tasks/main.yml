@@ -1,8 +1,8 @@
-- name: Ensure i3 is installed
+- name: Install packages
   apt: 
-    pkg: {{item}}
+    pkg: "{{ item }}"
     update_cache: true
     force: yes
     state: installed
-  with_items:
-    - {{ packages }}
+  with_items: "{{ packages }}"
+  become: true
